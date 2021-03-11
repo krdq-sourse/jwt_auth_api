@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+h2{
+    margin: 0;
+    padding: 0;
+}
+
+body, p{
+    font-family: 'Play', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 13pt;
+    display: flex;
+}
+
+.aside-left {
+    height: 100%;
+    width: 150px;
+    padding: 30px;
+}
+
+.aside-left_logo{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.aside-left_logo img{
+    width: 100px;
+}
+
+.aside-left_menu{
+}
+
+.aside-left_menu a{
+    text-decoration: none;
+    color: grey;
+    display: block;
+    transition: .3s;
+    padding: 10px;
+}
+
+.aside-left_menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.aside-left_menu li{
+    margin-bottom: 25px;
+}
+
+.aside-left_elem{
+    width: 180px;
+    transition: .3s;
+}
+
+.aside-left_menu i{
+    margin-right: 15px;
+}
+
+.aside-left_menu a:hover{
+    color: black;
+    transition: .3s;
+}
+
+.aside-left_elem:hover{
+    -webkit-box-shadow: -6px -1px 0px -4px rgba(0, 0, 0, 0.5) inset;
+    -moz-box-shadow: -6px -1px 0px -4px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: -6px -1px 0px -4px rgba(0, 0, 0, 0.5) inset;
+    transition: .3s;
+}
+
+main{
+    background-color: #f5eafa;
+    padding: 30px;
+    width: 100%;
+}
+
+main form{
+    display:inline-block;
+}
+
+.search{
+    margin-bottom: 40px;
+}
+
+.search i{
+    display:inline-block;
+    float: right;
+    font-size: 20pt;
+    color: grey;
+    transition: .3s;
+}
+
+.search input[type="search"]{
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    width: 274px;
+    padding: 10px;
+}
+
+.search input[type="submit"] {
+    border: none;
+    width: 35px;
+    height: 35px;
+    background-image: url("img/search-solid.png");
+}
+
+.search i:hover{
+    display:inline-block;
+    float: right;
+    font-size: 20pt;
+    color: black;
+    transition: .3s;
+}
+
+.titlebar{
+    margin-bottom: 40px;
+}
+
+.titlebar h2{
+    display: inline-block;
+}
+
+.titlebar p{
+    display: inline-block;
+    float: right;
+    padding-top: .3em;
+    padding-right: 40px;
+
+}
+
+.titlebar p a{
+    color: grey;
+    line-height:26px;
+    color:#333;
+    background:linear-gradient(currentColor, currentColor) 50% 100% no-repeat;
+    background-size:0 1px;
+    transition:background 250ms ease 0s;
+    text-decoration:none;
+}
+
+.titlebar p a:hover{
+    color: black;
+    background-size:100% 1px;
+}
+
+.news{
+    padding: 20px;
+    background-image: url(https://st3.depositphotos.com/2370557/18986/i/600/depositphotos_189862068-stock-photo-defocused-hologram-gradient.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    height: 400px;
+    color: white;
+    margin-bottom: 40px;
+    transition: .3s;
+}
+
+.content{
+}
+#main {
+    margin-top: 50px;
+}
+
+#knopka {
+    margin-top: 15px;
+}
+.cont{
+    background-image: url(https://delo.ua/files/news/images/3546/62/picture2_parchaladze-rassk_354662_p0.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    height: 250px;
+    width: 45%;
+    color: white;
+    float: left;
+    transition: .3s;
+}
+
+.cont:hover{
+    -webkit-box-shadow: 0px 0px 36px 5px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 36px 5px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 36px 5px rgba(34, 60, 80, 0.2);
+    transition: .3s;
+}
+
+.news:hover{
+    -webkit-box-shadow: 0px 0px 36px 5px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 36px 5px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 36px 5px rgba(34, 60, 80, 0.2);
+    transition: .3s;
+}
+
+.aside-right{
+    padding: 30px;
+    height: 100%;
+    width: 300px;
+}
+
+.aside-right_acc{
+    height: 50px;
+}
+
+.aside-right_acc img{
+    width: 50px;
+    border-radius: 10px;
+    float: left;
+    margin-right: 15px;
+}
+
+.aside-right_acc p{
+    margin: 0;
+    padding: 0;
+    line-height: 2.9em;
+}
+
+.aside-right_acc p i{
+    padding: 16.5px;
+}
+
