@@ -1,43 +1,102 @@
-function setCookie(name, value, options = {}) {
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' '){
+            c = c.substring(1);
+        }
 
-    options = {
-        path: '/',
-        // при необходимости добавьте другие значения по умолчанию
-        ...options
-    };
-
-    if (options.expires instanceof Date) {
-        options.expires = options.expires.toUTCString();
-    }
-
-    let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-
-    for (let optionKey in options) {
-        updatedCookie += "; " + optionKey;
-        let optionValue = options[optionKey];
-        if (optionValue !== true) {
-            updatedCookie += "=" + optionValue;
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
         }
     }
+    return "";
+}
 
-    document.cookie = updatedCookie;
+function setCookie(cname, cvalue, exdays) {
+    let d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 jQuery(function ($) {
+    $(document).ready(()=>{
+        if(getCookie('jwt')){
+            getUserName()
+            console.log("ne zareesfesf")
+        }else {
+            console.log("ne zareesfesf")
+        }
+    })
+
+    function showHomePage(){
+        let html = `
+<div class="search">
+
+            <form>
+                <p>
+                    <input type="search" name="q" placeholder="Поиск">
+                    <input type="submit" value="">
+                </p>
+            </form>
+
+            <a href=""><i class="far fa-comment"></i></a>
+
+        </div>
+
+        <div class="titlebar">
+
+            <h2>All courses</h2>
+
+            <p style="padding-right: 0;"><a href="">Ongoing</a></p>
+            <p><a href="">Favorite</a></p>
+            <p><a href="">Complete</a></p>
+
+        </div>
+
+        <div class="news">
+            <h2>UI/UX Design</h2>
+            <p>20 lessons</p>
+        </div>
+
+        <div class="content">
+
+            <div class="cont" style="margin-right: 4.1%;">
+
+                <h2>UI/UX Design</h2>
+                <p>14 lessons</p>
+
+            </div>
+            <div class="cont">
+
+                <h2>UI/UX Design</h2>
+                <p>6 lessons</p>
+
+            </div>
+
+        </div>`;
+        clearResponse();
+        $('#content_a').html(html);
+        $('.aside-right_acc').html("Пожалуйста авторизируйтесь");
+        $('title').html("Домашння страница")
+    }
     function showLoginPage() {
         {
             setCookie("jwt", "", 1);
             let html = `
-                <form>
+                <form id="login_form">
                        
                             <h1 class="display-4">Авторизация</h1>
                         
                                
                                
-                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <input type="email" class="form-control" name="email" placeholder="name@example.com">
                                         <label for="floatingInput">Email address</label>
                                         <br>
                                  
-                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <input type="password" name="password" placeholder="Password">
                                         <label for="floatingPassword">Password</label>
                                         <br>
                                 
@@ -54,6 +113,7 @@ jQuery(function ($) {
             $('title').html("Аворизация")
         }
     }
+
 
     function showRegistrationPage() {
 
@@ -100,14 +160,40 @@ jQuery(function ($) {
 
     $(document).on('click', '#sign_up', showRegistrationPage);
 
-    $(document).on('submit', '#sign_up_form', function (e) {
-        alert("ef");
+    $(document).on('submit', '#login_form', function(e){
         e.preventDefault();
-        // получаем данные формы
+        let login_form = $(this);
+        let form_data = JSON.stringify(login_form.serializeObject());
+
+        $.ajax({
+            url: "api/login.php",
+            type : "POST",
+            contentType : 'application/json',
+            data : form_data,
+            success : function(result){
+
+                // сохранить JWT в куки
+                setCookie("jwt", result.jwt, 1);
+                getUserName()
+                showHomePage();
+                // $('#response').html("<div class='alert alert-success'>Успешный вход в систему.</div>");
+
+            },
+            error: function(xhr, resp, text){
+                alert("gbpltw")
+                $('#response').html("<div >Ошибка входа. Email или пароль указан неверно.</div>");
+                login_form.find('input').val('');
+            }
+        });
+
+        return false;
+    });
+
+
+    $(document).on('submit', '#sign_up_form', function (e) {
+        e.preventDefault();
         let sign_up_form = $(this);
         let form_data = JSON.stringify(sign_up_form.serializeObject());
-        //
-        // отправить данные формы в API
 
         $.ajax({
             url: "http://jwt/api/create_user.php/",
@@ -115,31 +201,39 @@ jQuery(function ($) {
             contentType: 'application/json',
             data: form_data,
             success: function (result) {
-                // в случае удачного завершения запроса к серверу,
-                // сообщим пользователю, что он успешно зарегистрировался и очистим поля ввода
-                $('#response').html("<div class='alert alert-success'>Регистрация завершена успешно. Пожалуйста, войдите.</div>");
+                $('#response').html("<div class=''>Регистрация завершена успешно. Пожалуйста, войдите.</div>");
                 sign_up_form.find('input').val('');
-                alert("efd")
             },
             error: function (xhr, resp, text) {
-                // при ошибке сообщить пользователю, что регистрация не удалась
                 $('#response').html("<div class='alert alert-danger'>Невозможно зарегистрироваться. Пожалуйста, свяжитесь с администратором.</div>");
-
-                alert("hui")
             }
         });
 
         return false;
     });
 
-    // показать форму входа при клике на кнопку
 
-    // Удаление всех быстрых сообщений
     function clearResponse() {
         $('#response').html('');
     }
+    function getUserName(){
+        let arr = {jwt: getCookie('jwt')}
+        $.ajax({
+            url: "http://jwt/api/validate_token.php/",
+            type: "POST",
+            contentType: 'application/json',
+            data:  JSON.stringify(arr),
+            success: function (result) {
+                $('.aside-right_acc').html(result.data.firstname+"<br><div id='sign_in'>logout</div>");
+                console.log(result)
+            },
+            error: function (xhr, resp, text) {
+                console.log(this.data)
+            }
+        });
 
-    // функция showLoginPage()
+    }
+
 
     $.fn.serializeObject = function () {
         var o = {};

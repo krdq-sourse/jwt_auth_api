@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1149d83d-3cd2-4a12-a977-bc72907168a2" name="Default Changelist" comment="deleted useless files">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+    <list default="true" id="1149d83d-3cd2-4a12-a977-bc72907168a2" name="Default Changelist" comment="auth interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/create_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/create_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dnkga\Downloads\OpenServer\domains\jwt" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dnkga\Downloads\OpenServer\domains\jwt\js" />
       <recent name="C:\Users\dnkga\Downloads\OpenServer\domains\jwt\api" />
       <recent name="C:\Users\dnkga\Downloads\OpenServer\domains\jwt" />
       <recent name="C:\Users\dnkga\Downloads\OpenServer\domains\jwt\authentication" />
@@ -54,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615454491893</updated>
-      <workItem from="1615454492924" duration="8894000" />
+      <workItem from="1615454492924" duration="12167000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1615454963771</created>
@@ -77,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615461170281</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="auth interface">
+      <created>1615472189038</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615472189038</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,7 +97,8 @@
     <MESSAGE value="Init commit" />
     <MESSAGE value="api" />
     <MESSAGE value="deleted useless files" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted useless files" />
+    <MESSAGE value="auth interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth interface" />
   </component>
   <component name="WindowStateProjectService">
     <state x="520" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615471506207">
