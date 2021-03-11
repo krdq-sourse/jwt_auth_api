@@ -35,6 +35,7 @@ use \Firebase\JWT\JWT;
  * @var $aud
  * @var $iat
  * @var $nbf
+ * @var $key
  *
  */
 

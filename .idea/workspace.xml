@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1149d83d-3cd2-4a12-a977-bc72907168a2" name="Default Changelist" comment="Init commit">
-      <change afterPath="$PROJECT_DIR$/api/config/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/create_user.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/objects/user.php" afterDir="false" />
+    <list default="true" id="1149d83d-3cd2-4a12-a977-bc72907168a2" name="Default Changelist" comment="api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/api/config/core.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/api/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/api/objects/user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/create_user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/update_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/update_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/validate_token.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/validate_token.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +52,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615454491893</updated>
-      <workItem from="1615454492924" duration="5219000" />
+      <workItem from="1615454492924" duration="6547000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1615454963771</created>
@@ -70,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615454963771</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="api">
+      <created>1615459727945</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615459727945</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,9 +76,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
+    <MESSAGE value="api" />
+    <option name="LAST_COMMIT_MESSAGE" value="api" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="518" y="314" width="558" height="269" key="Github.ShareDialog" timestamp="1615460127502">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="518" y="314" width="558" height="269" key="Github.ShareDialog/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1615460127502" />
     <state x="540" y="135" key="NewPhpClassDialog" timestamp="1615456739658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -93,6 +96,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1615454848405" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1615460065158">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1615460065158" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1615458030204">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
